@@ -1,0 +1,69 @@
+
+&__btn{
+    @media screen and (max-width: map-get($breakpoints, mobile)){            
+        width: 95%;                            
+    }            
+    @media screen and (min-width: map-get($breakpoints, tablet)){            
+        width: 61%;
+        max-width: 550px;            
+    }            
+    $arg: rw-fs-cnt-nw;
+    @include flxbox($flex-map, $arg);
+    background-color: rgba($color-black , nth($blck-opct, 2));
+    border-radius: 25px;
+    border:none; 
+    padding: 30px 20px;
+    padding-left: 0;
+    margin: 0em 0 2em .75em;    
+    box-shadow: 0 0 8px 4px rgba($color-black, nth($blck-opct, 2));            
+    &-rank{
+        transform: translateX(-.75em);
+        $arg: rw-cnt-cnt-nw;
+        @include flxbox($flex-map, $arg);
+        width: 1.5em;
+        height: 1.5em;
+        font-size: 1.5em;
+        font-weight:700;
+        color: $color-white;
+        background-color: $color-primary;
+        border: none;
+        border-radius: 50%; 
+        @media screen and (min-width: map-get($breakpoints, tablet)){
+            width: 2em;
+            height: 2em;
+            transform: translate(-1em);            
+        }                
+    }
+    &-icon{
+        display: inline-block;
+        font-size: 1.75em; 
+        color:rgba($color-black, nth($blck-opct, 5));
+        @media screen and (min-width: map-get($breakpoints, tablet)){
+            font-size: 2em; 
+            }
+        @media screen and (min-width: map-get($breakpoints, desktop)){
+            font-size: 2.5em;
+            }
+    }
+    &-txt{
+        display: inline-block;
+        font-size: 1.25em;    
+        font-weight:700;                                
+        padding-left: 0.5em;
+        @media screen and (min-width: map-get($breakpoints, tablet)){
+            font-size: 1.5em;
+            }
+        @media screen and (min-width: map-get($breakpoints, desktop)){
+            font-size: 1.75em;
+            font-weight:700;            
+            }                                                                                                                         
+    }
+    &:hover{    
+        cursor:pointer;            
+        background-color: rgba($color-primary, .1); 
+        box-shadow: 0 0 8px 4px rgba($color-black, nth($blck-opct, 4));                                          
+        & i{
+            color: $color-primary;
+        }
+    } 
+}

@@ -1,0 +1,81 @@
+&-content{
+    width: 95%;
+    margin: 1.5em auto;  
+    &__hdr{ 
+        width: 100%; 
+        padding-bottom: 0.5em;            
+        margin-bottom: 1em;
+        text-transform:uppercase;          
+        & span:nth-child(1){
+            border-bottom: 0.2em solid $color-tertiary;                                        
+        }        
+    }
+    &-block{
+        width: 100%;
+        margin-bottom: 3em;
+        &__dish{                        
+            width: 100%;
+            height: 4.5em;  
+            $arg: rw-sb-cnt-nw;
+            @include flxbox($flex-map, $arg);  
+            background-color: $color-white;
+            border-radius: 1.25em;
+            margin-bottom: 1em;
+            cursor: pointer;
+            position: relative;
+            opacity: 0;
+            &-txt{
+                width: 100%;
+                padding: 0.75em;                
+                & p{    
+                    width: 100%;
+                    margin-bottom: 0.5em;     
+                    font-weight: 800;                     
+                    text-overflow: ellipsis;                
+                    overflow: hidden;
+                    white-space: nowrap;                        
+                    &:nth-child(2){ 
+                        $arg: rw-sb-cnt-nw;
+                        @include flxbox($flex-map, $arg);                                                     
+                        & span:nth-child(1){ 
+                                font-weight: 400;                                     
+                                text-overflow: ellipsis;                
+                                overflow: hidden;
+                                white-space: nowrap;                                
+                        }               
+                    }
+                }                    
+            }
+
+// Menu dish icon design
+            @import "../components/menu-dish-icon";
+
+// When dish is not "mouse-overed", push icon off the page dish 
+            &:not(:hover) .menu-content-block__dish-icon{
+                transform: scaleX(0);
+                position: absolute;
+                right: -1em;     
+            }
+
+// When dish is mouse overed, run icon animation 
+// Text is also amended to stay consistent (Price move, to leave space for icon as well potential
+// overflow and ) 
+            &:hover{ 
+                & .menu-content-block__dish-txt{
+                    padding-right: 4.5em;                        
+                }  
+
+                & .menu-content-block__dish-icon{
+                    @include dish-check-tr-anim($dish-check-tr-map);
+
+                    & i{                     
+                        @include dish-check-rot-anim;                                            
+                    }                  
+                }
+            }  
+// Appearance of dishes one by one. Each step following first is delayed until on going step is 
+// complete
+            @include dish-appear-anim($dish-appear-opc);
+        }
+    }
+}

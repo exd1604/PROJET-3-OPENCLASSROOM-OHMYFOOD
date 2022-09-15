@@ -1,0 +1,24 @@
+.header{
+    width: 100%;
+    position: relative;
+    height: 3.75em;
+    &__rtn{
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 1.5em;
+        transform: translate(0% , -50%);
+        width: 3.75em;
+        border: none;
+        background-color: $color-white;
+        color: $color-black;
+        cursor: pointer;        
+    }
+    &__logo{
+        display: inline-block;    
+        position:absolute;
+        top: 50%;
+        left: 50%;   
+        transform: translate(-50% , -50%);                                   
+    }            
+}

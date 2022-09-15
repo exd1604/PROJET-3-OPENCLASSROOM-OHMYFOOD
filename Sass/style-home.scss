@@ -1,0 +1,24 @@
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./base/typography";
+
+/* Set variable to indicate wether we are on the main welcome page of menu detail page
+*/
+$page: 1;
+
+@import "./components/home-spinner";
+
+@import "./layout/home-wrapper";
+
+@import "./layout/home-header";
+        
+@import "./layout/home-explore";
+
+@import "./layout/home-operation";
+
+@import "./layout/home-restaurant";
+
+@import "./layout/home-restaurant-menu-card";
+
+@import "./layout/global-footer";

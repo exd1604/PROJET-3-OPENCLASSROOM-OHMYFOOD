@@ -1,0 +1,38 @@
+.footer{
+    width: 100%;
+    text-align: center;
+    background-color: rgba($color-black , nth($blck-opct, 6));    
+    @media screen and (max-width: map-get($breakpoints, mobile)){
+        padding-left: 1.25em;
+        text-align: left;            
+    }
+    & h2{
+        color: $color-white; 
+        font-weight: 400;
+        padding: 25px 0;                                     
+    }
+    &__list{         
+        list-style: none;
+        padding: 0 0 30px 0;
+        @media screen and (min-width: map-get($breakpoints, tablet)){ 
+            $arg: rw-se-cnt-nw;
+            @include flxbox($flex-map, $arg);                                            
+        }
+        & li{
+            padding-bottom: 10px;
+            @media screen and (min-width: map-get($breakpoints, tablet)){ 
+                display: inline-block;
+                //&:nth-child(1){
+                //   min-width: 11.75em;                                
+                //}                
+            }
+            & a{    
+                text-decoration:none;
+                color: $color-white;
+            }
+            & i{
+                width: 1.5em;
+            }
+        }
+    }        
+}

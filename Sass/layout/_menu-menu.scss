@@ -1,0 +1,28 @@
+.menu{
+    width:100%;
+    background-color: rgba($color-black , nth($blck-opct, 1));
+    color:$color-black; 
+    border-radius: 3em 3em 0 0;
+    padding-bottom: 3.25em;
+    &__title{
+        width: 95%;
+        margin: 0 auto;      
+        &-content{
+            max-width: 17em;
+            padding-top: 1.5em; 
+            font-weight: 400;  
+            position: relative;                                 
+            &-icon{
+                position: absolute;
+                right: 0;
+                
+                $heart-translate-value: nth($heart-icon-merge,2);
+                @include heart-icon-transform($heart-translate-value);
+            }        
+        }
+    }
+        
+    @import "./menu-dish-content";
+      
+    @import "../components/menu-btn";   
+}

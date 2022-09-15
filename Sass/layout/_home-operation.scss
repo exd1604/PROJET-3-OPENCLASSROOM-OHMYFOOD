@@ -1,0 +1,23 @@
+.operation{
+    width: 100%;
+    box-sizing: border-box;
+    $arg: cl-lft-fs-nw;
+    @include flxbox($flex-map, $arg);
+    background-color:$color-white;
+    padding: 60px 20px;          
+    &__title{
+        font-size: 2em;
+        font-weight: 700;
+        margin-bottom: 1em;
+    }
+    &-btn{
+        width: 100%;
+        $arg: cl-lft-fs-nw;
+        @include flxbox($flex-map, $arg);
+        @media screen and (min-width: map-get($breakpoints, tablet)){            
+            $arg: rw-sb-cnt-w;
+            @include flxbox($flex-map, $arg);            
+        } 
+@import "../components/home-operation-btn.scss";
+    }
+}

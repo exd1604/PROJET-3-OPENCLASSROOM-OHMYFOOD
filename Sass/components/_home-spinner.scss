@@ -1,0 +1,56 @@
+@keyframes spinner{
+    0%{
+        transform: rotate(0deg); 
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinner-complete{
+    0%{
+        opacity: 1; 
+    }
+    33%{
+        opacity:0.66;
+    }    
+    100%{
+        opacity:0;
+        z-index:-1;
+    }
+}
+
+.loading-spinner-whole{
+    width: 100%;
+    height: 170vh;
+    background-color: $color-tertiary;
+    position:absolute;
+    top:0;
+    animation: spinner-complete $spinner-complete-dur $loading-spinner-dur forwards;    
+}
+.loading-spinner-inner{
+    width: 100%;
+    height: 100vh;    
+    $arg: cl-cnt-cnt-nw;
+    @include flxbox($flex-map, $arg);
+    &__intro{
+        $arg: cl-cnt-cnt-nw;
+        @include flxbox($flex-map, $arg);         
+        & p{
+            text-transform:uppercase;
+            font-size: 2em;
+            font-weight:700;
+            padding: 1.5em 0;
+        }      
+    }    
+    &__spin{
+        width: 100px;
+        height: 100px;
+        border: 8px solid $color-white;
+        border-radius: 50%;
+        border-top-color: $color-primary;
+        border-bottom-color: $color-secondary;        
+        animation: spinner $loading-spinner-cycle-dur $loading-spinner-delay ease-in-out $loading-spinner-iter;        
+    }        
+}

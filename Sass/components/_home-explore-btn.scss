@@ -1,0 +1,13 @@
+&__btn{
+    background-image: linear-gradient(rgba($color-secondary, 1), rgba($color-primary, 1));
+    color: $color-white; 
+    font-size: large;
+    padding: 20px;
+    border:none;
+    border-radius: 35px;
+    margin-bottom: 50px; 
+    &:hover{
+        cursor:pointer;
+        background-image: linear-gradient(rgba($color-secondary,0.7), rgba($color-primary, 0.7));        
+    }         
+}

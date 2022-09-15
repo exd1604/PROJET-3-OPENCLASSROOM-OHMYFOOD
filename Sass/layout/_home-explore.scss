@@ -1,0 +1,36 @@
+.explore{
+    $arg: cl-cnt-cnt-nw;
+    @include flxbox($flex-map, $arg);    
+//
+    background-color: rgba($color-black , nth($blck-opct, 2));
+    &__loc{
+        width: 100%;
+        $arg: rw-cnt-cnt-nw;
+        @include flxbox($flex-map, $arg);
+        background-color: rgba($color-black , nth($blck-opct, 3));
+        color:$color-black;  
+        height: 50px;
+        & i{
+            width: 25px; 
+        }
+        & span{
+            text-align: center;                
+        }
+    }
+    &__title{
+        margin: 20px 0;
+        & p{
+            font-size: 2em;
+            font-weight: 700;
+            text-align: center;            
+        }
+    }
+    &__txt{
+        opacity: 0.5; 
+        margin-bottom: 20px;
+        & p{
+            text-align:center;                
+        }           
+    }
+@import "../components/home-explore-btn.scss";
+}

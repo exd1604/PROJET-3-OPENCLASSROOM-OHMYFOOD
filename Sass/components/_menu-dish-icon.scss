@@ -1,0 +1,18 @@
+&-icon{
+    width: 3.75em;
+    height: 4.5em; 
+    $arg: cl-cnt-cnt-nw;
+    @include flxbox($flex-map, $arg);              
+    background-color: $color-tertiary;
+    color:$color-white;
+    border-radius: 0 1em 1em 0;    
+    & i{
+        width: 1.75em;
+        height: 1.75em;
+        $arg: cl-cnt-cnt-nw;
+        @include flxbox($flex-map, $arg);              
+        color: $color-tertiary;
+        background-color: $color-white;
+        border-radius: 50%;                        
+    }                                                                          
+} 

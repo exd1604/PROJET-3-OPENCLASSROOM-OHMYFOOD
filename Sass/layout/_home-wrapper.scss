@@ -1,0 +1,25 @@
+@keyframes wrapper{
+    0% {
+        opacity:0;
+    }
+    50% {
+        opacity:0.5;
+    }
+
+    100% {
+        opacity:1;
+    }
+}
+
+.wrapper{
+    position:absolute;
+    top:0;
+    width: 100%;
+    min-width: $min-width;
+/* Delay appearance of wrapper once spinner is complete
+   Depending on page loaded. Check variables. 
+   Animation currently runs only if main page.
+*/
+    $map-val: map-get($page-map, $page);
+    animation: wrapper map-get($map-val, wrapper-dur) map-get($map-val, wrapper-delay) both;
+} 

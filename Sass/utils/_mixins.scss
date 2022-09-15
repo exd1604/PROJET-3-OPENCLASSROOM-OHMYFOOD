@@ -1,0 +1,136 @@
+//@mixin border($colour:$colour-primary) {
+//    border: .1rem solid $colour;
+//}
+
+@mixin flxbox($flex-map, $arg) {
+        $map-val: map-get($flex-map, $arg);
+        display: flex;
+        flex-direction: map-get($map-val, flx-dir);
+        justify-content: map-get($map-val, jst-cnt);
+        align-items: map-get($map-val, alg-itm);
+        flex-wrap: map-get($map-val, wrp);
+      }
+
+// Heart icon & animation - Used on home page menu body card & Menu detail h1 title
+@mixin heart-icon-transform($heart-translate-value){  
+  display: inline-block;                  
+  & i{
+      &:nth-child(1){                         
+          transform: translateX($heart-translate-value); 
+          &:not(:hover){
+              opacity: 1;
+          }                        
+      }
+      &:nth-child(2){  
+          transform: translateX(-1*$heart-translate-value);                                          
+          color: $color-white;
+          &:not(:hover){
+              opacity: 0;
+          }
+          &:hover{
+              cursor:pointer;
+
+/* Mixin creating each step of the keyframe related to heart icon (I like) animation
+*/            
+              @include user-like-anim($user-like-map);                                                        
+              animation: user-like $menu-card-body-icon-dur $menu-card-body-icon-delay both;            
+          }
+      }                   
+  }                 
+}
+  
+@mixin home-card-img($map) {
+    @each $mod, $val in $map {
+      &--#{$mod} {
+        $mnu-card-img-val: map-get($map, $mod);
+        background-image: map-get($mnu-card-img-val, bgi);
+        @media screen and (min-width: map-get($breakpoints, tablet)){            
+            background-position: 50%;
+        }
+        & span{
+            opacity: map-get($mnu-card-img-val, opct);
+        }
+      }
+    }
+  }
+
+  @mixin menu-banner-img($map) {
+    @each $mod, $val in $map {
+        &--#{$mod} {
+          $menu-banner-img-val: map-get($map, $mod);
+// 
+          height: map-get($menu-banner-img-val, hgt);
+          display: map-get($menu-banner-img-val, dsp);          
+          background-image: map-get($menu-banner-img-val, bgi);
+          background-size: map-get($menu-banner-img-val, siz);
+          background-position: map-get($menu-banner-img-val, pos);
+          margin-bottom: map-get($menu-banner-img-val, mrg);
+          @media screen and (min-width: map-get($breakpoints, tablet)){            
+              background-position: 50%;
+          }          
+        }
+      }
+    }  
+
+@mixin user-like-anim($map) {
+    @keyframes user-like{
+        @each $key, $val in $map {
+        #{$key} {
+            $map-val: map-get($map, $key);
+            color: map-get($map-val, clr);
+            opacity: $key;
+            }
+        }
+    }
+}  
+
+// icon appearance animation when a dish is mouse overed
+// Manages 2 animation - One positionning to make icon appear and second is icon rotating within
+// icon
+@mixin dish-check-tr-anim($map) {
+  @keyframes dish-check-tr{
+    @each $key, $val in $map {
+      #{$key} {
+          $map-val: map-get($map, $key);
+          transform: map-get($map-val, trf);
+          position: map-get($map-val, pos);
+          right: map-get($map-val, rgt);
+          }
+      }   
+  }
+  animation: dish-check-tr $dish-check-dur $dish-check-delay linear forwards;
+}
+
+@mixin dish-check-rot-anim{
+  @keyframes dish-check-rot{
+    0%{
+      transform: rotate(0deg);                                                                       
+    }            
+    100%{
+      transform: rotate(360deg);                                                 
+    }   
+  }
+  animation: dish-check-rot $dish-check-dur $dish-check-delay linear forwards;
+}
+
+// When arriving on the menu main page, dishes appear one by one
+@mixin dish-appear-anim($map) {
+// Generate Keyframe for animation
+  @keyframes dish-appear{
+    @each $key in $map {
+      #{$key} {
+          opacity: $key;          
+      }
+    }   
+  }
+// Generate set of animation
+// One for each dish - Create modicator that runs each step. Delay is set to calculated based on one 
+// step duration * $ind-1
+  @for $ind from 0 through 9{
+    $stp: $ind+1;     
+    &--#{$stp} {
+      $dish-appear-delay: $dish-appear-dur*$ind;
+      animation: dish-appear $dish-appear-dur $dish-appear-delay $dish-appear-tmg-fct $dish-appear-fill-mode;              
+    }
+  }
+}

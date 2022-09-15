@@ -1,0 +1,201 @@
+// Width
+$min-width: 375px;
+
+// Colors 
+$color-primary: rgb(147, 86, 220);
+$color-secondary: rgb(255, 121, 218);
+$color-tertiary: rgb(153, 226, 208);
+$color-black: #000000;
+$color-white: #fff;
+
+// Background black color is used with different levels of opacity through the page.
+// Location area in the explore block, remaining of explore block, operation button, menu cards & footer
+// List below contains various black opacity used in the site
+$blck-opct: (0.031, 0.075, 0.2, 0.25, 0.4, 0.8);
+
+// Animation related variables
+// Loading-spinner
+$loading-spinner-dur: 2100ms;
+$loading-spinner-cycle-dur: 700ms;
+$loading-spinner-delay: 0ms;
+$loading-spinner-iter: calc($loading-spinner-dur / $loading-spinner-cycle-dur) ;
+$spinner-complete-dur: 500ms;
+
+// Menu Dish animations 
+// 1- Transform positionning of dish icon & dish icon rotation
+$dish-check-dur: 800ms;
+$dish-check-delay: 0ms;
+// 2- Appearance of each dish 
+$dish-appear-dur: 600ms;
+$dish-appear-tmg-fct: linear;
+$dish-appear-fill-mode: forwards;
+
+// Heart Icon - "I like"
+// Animation - Variables are shared by home and menu detail pages 
+$menu-card-body-icon-dur: 1000ms;
+$menu-card-body-icon-delay: 0ms;
+// Translation to merge both heart icons
+// 1st value: Home page -- Menu card body  
+// Second value: Menu detail title h1
+$heart-icon-merge: (57%, 60%);
+
+// Main welcome vs menu detail pages
+// Some code behavior depends on this - $page is set at the start of main css and used 
+// lookup in the below map (i.e: The wrapper does not run on menu detail pages) 
+$page-map: (
+    1: (welcome-page: 1,
+           wrapper-dur: 200ms,
+           wrapper-delay: $loading-spinner-dur+$spinner-complete-dur),
+    2: (welcome-page: 0,
+           wrapper-dur: 200ms,
+           wrapper-delay: 0s)                  
+);
+
+// Used in mixin flxbox - Defines the flex containers setup used in this project
+$flex-map: (
+    cl-cnt-cnt-nw: (
+        flx-dir: column,
+        jst-cnt: center,
+        alg-itm: center,
+        wrp: nowrap),
+
+    cl-cnt-fs-nw: (
+        flx-dir: column,
+        jst-cnt: center,
+        alg-itm: flex-start,
+        wrp: nowrap),
+    
+    cl-fs-dft-nw: (
+        flx-dir: column,
+        jst-cnt: flex-start,
+        alg-itm: stretch,
+        wrp: nowrap),
+
+    cl-lft-fs-nw: (
+        flx-dir: column,
+        jst-cnt: left,
+        alg-itm: flex-start,
+        wrp: nowrap),
+
+    rw-cnt-cnt-nw: (
+        flx-dir: row,
+        jst-cnt: center,
+        alg-itm: center,
+        wrp: nowrap),                                                
+    
+    rw-sb-cnt-nw: (
+        flx-dir: row,
+        jst-cnt: space-between,
+        alg-itm: center,
+        wrp: nowrap),
+        
+    rw-sb-cnt-w: (
+        flx-dir: row,
+        jst-cnt: space-between,
+        alg-itm: center,
+        wrp: wrap),
+        
+    rw-fs-cnt-nw: (
+        flx-dir: row,
+        jst-cnt: flex-start,
+        alg-itm: center,
+        wrp: nowrap),
+        
+    rw-sa-cnt-nw: (
+        flx-dir: row,
+        jst-cnt: space-around,
+        alg-itm: center,
+        wrp: nowrap),
+    rw-se-cnt-nw: (
+        flx-dir: row,
+        jst-cnt: space-evenly,
+        alg-itm: center,
+        wrp: nowrap)    
+);  
+
+$breakpoints: (
+  mobile: 767px,
+  tablet: 768px,
+  //operation-btn: 839px,
+  desktop: 992px);
+
+//Home page - Menu card image modificators (Related mixin using it: mnu-card-img)  
+$home-card-img: (
+  1: (bgi: url(../../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg),
+      pos: 0% 100%,
+      opct: 1),
+
+  2: (bgi: url(../../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg),            
+      pos: 0% 61%,
+      opct: 1),
+      
+  3: (bgi: url(../../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg),            
+      pos: 100% 100%,
+      opct: 0),
+    
+  4: (bgi: url(../../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg),            
+      pos: 0% 100%,
+      opct: 0)
+  );
+
+// Menu detail - Banner image modificators (Related mixin using it: menu-banner-img)  
+$menu-banner-img: (
+  1: (hgt: 25em,
+      dsp: block,  
+      bgi: url(../../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg),
+      pos: 50% 50%,
+      siz: cover,
+      mrg: -3em),
+
+  2: (hgt: 25em,
+      dsp: block,    
+      bgi: url(../../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg),            
+      pos: 50% 50%,
+      siz: cover,      
+      mrg: -3em),
+      
+  3: (hgt: 25em,
+      dsp: block,      
+      bgi: url(../../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg),            
+      pos: 50% 50%,
+      siz: cover,      
+      mrg: -3em),
+    
+  4: (hgt: 25em,
+      dsp: block,        
+      bgi: url(../../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg),            
+      pos: 50% 50%,
+      siz: cover,      
+      mrg: -3em)
+  );
+
+  // User like animation map (Related mixin using it: user-like-anim) 
+  // Used on home page - On each menu card body
+  // User on menu page - Header h1
+$user-like-map: (
+    0%:  (clr: $color-secondary),
+    10%: (clr: $color-secondary),
+    20%: (clr: $color-secondary),
+    30%: (clr: $color-secondary),
+    40%: (clr: $color-secondary),
+    50%: (clr: $color-secondary),
+    60%: (clr: $color-primary),
+    70%: (clr: $color-primary),
+    80%: (clr: $color-primary),
+    90%: (clr: $color-primary),
+    100%: (clr: $color-primary));
+
+// Used in dish-check-tr-anim mixin - Define check icon animation keyframe
+$dish-check-tr-map:(
+    0%:  (trf: scaleX(0),
+          pos: absolute,
+          rgt: -3.75em),
+    50%: (trf: scaleX(0.75),
+          pos: absolute,
+          rgt: -1.875em),
+    100%: (trf: scaleX(1),
+           pos: absolute,
+           rgt: 0));
+
+// List used in mixin dish-appear-anim - Steps for dish appearance keyframe 
+$dish-appear-opc:(0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%);
