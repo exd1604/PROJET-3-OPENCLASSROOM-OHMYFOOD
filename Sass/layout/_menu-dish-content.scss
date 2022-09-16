@@ -10,6 +10,8 @@
             border-bottom: 0.2em solid $color-tertiary;                                        
         }        
     }
+// 3 blocks - Starters, main dishes and desserts.
+// Design and behavior don't differ so only one setup
     &-block{
         width: 100%;
         margin-bottom: 3em;
@@ -50,7 +52,7 @@
 // Menu dish icon design
             @import "../components/menu-dish-icon";
 
-// When dish is not "mouse-overed", push icon off the page dish 
+// When dish is not "mouse-overed", push icon off the dish container
             &:not(:hover) .menu-content-block__dish-icon{
                 transform: scaleX(0);
                 position: absolute;
@@ -59,7 +61,7 @@
 
 // When dish is mouse overed, run icon animation 
 // Text is also amended to stay consistent (Price move, to leave space for icon as well potential
-// overflow and ) 
+// overflow and ellipsis are showed when text overflows) 
             &:hover{ 
                 & .menu-content-block__dish-txt{
                     padding-right: 4.5em;                        
@@ -73,8 +75,8 @@
                     }                  
                 }
             }  
-// Appearance of dishes one by one. Each step following first is delayed until on going step is 
-// complete
+// Appearance of dishes one by one. Each step following first is delayed 
+// until on going step is complete
             @include dish-appear-anim($dish-appear-opc);
         }
     }

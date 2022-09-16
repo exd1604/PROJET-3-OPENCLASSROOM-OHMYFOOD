@@ -1,4 +1,9 @@
 
+// 3 buttons on the home page menu in the "operation" section.
+// Buttons expands on mobile and then up to a certain size (550px)
+// on tablet onwards. When enough space, the buttons get displayed 
+// horizontally on tablet & desptops.
+// Font size and icon size also grow depending on screen size.
 &__btn{
     @media screen and (max-width: map-get($breakpoints, mobile)){            
         width: 95%;                            

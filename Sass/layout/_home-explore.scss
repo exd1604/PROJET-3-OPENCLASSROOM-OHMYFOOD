@@ -1,3 +1,4 @@
+// Home page explore section on top of the page.
 .explore{
     $arg: cl-cnt-cnt-nw;
     @include flxbox($flex-map, $arg);    

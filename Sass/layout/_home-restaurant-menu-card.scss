@@ -1,3 +1,8 @@
+// Home restaurant menu card.
+// Card sizes and display evolve depending on the screen size.
+// One column on mobile with a min and max height (Otherwise grow too much
+// but not enough space to display differently)
+// 2 Columns on tablet onwards.
 .restaurant-menu-card{
     display: block;
     text-decoration:none; 

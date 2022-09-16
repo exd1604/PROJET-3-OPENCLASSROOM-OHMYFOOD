@@ -1,7 +1,4 @@
-//@mixin border($colour:$colour-primary) {
-//    border: .1rem solid $colour;
-//}
-
+// Manage the different flex setups used in the project
 @mixin flxbox($flex-map, $arg) {
         $map-val: map-get($flex-map, $arg);
         display: flex;
@@ -38,7 +35,9 @@
       }                   
   }                 
 }
-  
+
+// This creates the different BEM modificators so the right image gets
+// loaded to its expected menu  
 @mixin home-card-img($map) {
     @each $mod, $val in $map {
       &--#{$mod} {
@@ -54,6 +53,8 @@
     }
   }
 
+// Same as above except this one is set as a banner on the menu detail
+// page
   @mixin menu-banner-img($map) {
     @each $mod, $val in $map {
         &--#{$mod} {
@@ -72,6 +73,8 @@
       }
     }  
 
+// Heart Icon (I like) - Used on both home page (Individual restaurant
+// menu card body) and menu details (Header)
 @mixin user-like-anim($map) {
     @keyframes user-like{
         @each $key, $val in $map {
@@ -101,6 +104,8 @@
   animation: dish-check-tr $dish-check-dur $dish-check-delay linear forwards;
 }
 
+// Detail menu - When user passes mouve over a dish a check icon gets
+// animated. (Appears and inner icon rotates)
 @mixin dish-check-rot-anim{
   @keyframes dish-check-rot{
     0%{
@@ -113,7 +118,7 @@
   animation: dish-check-rot $dish-check-dur $dish-check-delay linear forwards;
 }
 
-// When arriving on the menu main page, dishes appear one by one
+// When arriving on the menu detail page, dishes appear one by one
 @mixin dish-appear-anim($map) {
 // Generate Keyframe for animation
   @keyframes dish-appear{

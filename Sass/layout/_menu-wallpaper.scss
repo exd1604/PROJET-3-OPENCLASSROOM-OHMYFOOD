@@ -1,3 +1,10 @@
+// The menu detail section as well as footer use a 
+// different shades of grey.
+// This is obtained playing with the opacity level of black color.
+// Because the main page is overlapping the banner, banner appears as 
+// menu background is a bit transparent.
+// To ensure banner is covered a white opaque layer is displayed on back of
+// manu page. (Background is already used by grey).
 .wallpaper{
     background-color: $color-white;
     border-radius: 3em 3em 0 0;    
