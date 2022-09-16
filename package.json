@@ -6,8 +6,8 @@
   "scripts": {
     "sass-home": "sass --watch ./sass/style-home.scss:./css/style-home.css",
     "sass-menu": "sass --watch ./sass/style-menu.scss:./css/style-menu.css",
-    "prefix-home": "postcss ./css/style-home.css --use autoprefixer  -d ./css/prefixed/",
-    "prefix-menu": "postcss ./css/style-menu.css --use autoprefixer  -d ./css/prefixed/"
+    "prefix-home": "postcss ./css/style-home.css --use autoprefixer  -d ./css/",
+    "prefix-menu": "postcss ./css/style-menu.css --use autoprefixer  -d ./css/"
   },
   "author": "",
   "license": "ISC",

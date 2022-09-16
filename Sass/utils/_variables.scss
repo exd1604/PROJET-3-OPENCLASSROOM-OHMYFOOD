@@ -121,19 +121,19 @@ $breakpoints: (
 
 //Home page - Menu card image modificators (Related mixin using it: mnu-card-img)  
 $home-card-img: (
-  1: (bgi: url(../../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg),
+  1: (bgi: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg),
       pos: 0% 100%,
       opct: 1),
 
-  2: (bgi: url(../../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg),            
+  2: (bgi: url(../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg),            
       pos: 0% 61%,
       opct: 1),
       
-  3: (bgi: url(../../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg),            
+  3: (bgi: url(../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg),            
       pos: 100% 100%,
       opct: 0),
     
-  4: (bgi: url(../../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg),            
+  4: (bgi: url(../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg),            
       pos: 0% 100%,
       opct: 0)
   );
@@ -142,28 +142,28 @@ $home-card-img: (
 $menu-banner-img: (
   1: (hgt: 25em,
       dsp: block,  
-      bgi: url(../../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg),
+      bgi: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg),
       pos: 50% 50%,
       siz: cover,
       mrg: -3em),
 
   2: (hgt: 25em,
       dsp: block,    
-      bgi: url(../../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg),            
+      bgi: url(../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg),            
       pos: 50% 50%,
       siz: cover,      
       mrg: -3em),
       
   3: (hgt: 25em,
       dsp: block,      
-      bgi: url(../../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg),            
+      bgi: url(../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg),            
       pos: 50% 50%,
       siz: cover,      
       mrg: -3em),
     
   4: (hgt: 25em,
       dsp: block,        
-      bgi: url(../../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg),            
+      bgi: url(../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg),            
       pos: 50% 50%,
       siz: cover,      
       mrg: -3em)
