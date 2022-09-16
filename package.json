@@ -1,0 +1,15 @@
+{
+  "name": "dynamisez-une-page-web-avec-des-animations-css",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass-home": "sass --watch ./sass/style-home.scss:./css/style-home.css",
+    "sass-menu": "sass --watch ./sass/style-menu.scss:./css/style-menu.css",
+    "prefix-home": "postcss ./css/style-home.css --use autoprefixer  -d ./css/prefixed/",
+    "prefix-menu": "postcss ./css/style-menu.css --use autoprefixer  -d ./css/prefixed/"
+  },
+  "author": "",
+  "license": "ISC",
+  "browserslist": "last 4 versions"
+}
