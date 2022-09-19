@@ -3,10 +3,6 @@
 @import "./utils/mixins";
 @import "./base/typography";
 
-/* Set variable to indicate wether we are on the main welcome page of menu detail page
-*/
-$page: 1;
-
 @import "./components/home-spinner";
 
 @import "./layout/home-wrapper";

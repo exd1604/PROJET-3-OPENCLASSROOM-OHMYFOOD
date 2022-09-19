@@ -1,7 +1,7 @@
-// A spiiner is requested on home page. (Team is expecting the number of 
+// A spinner is requested on home page. (Team is expecting the number of 
 // restaurants available to grow so.... users might have to "wait" a bit
 // in a near future.
-// Design does not exist so team is waiting for proposals. Below is mine.
+// Design does not exist so below is my proposal.
 @keyframes spinner{
     0%{
         transform: rotate(0deg); 
@@ -15,27 +15,19 @@
 @keyframes spinner-complete{
     0%{
         opacity: 1; 
-    }
-    33%{
-        opacity:0.66;
-    }    
+    }        
     100%{
         opacity:0;
         z-index:-1;
     }
 }
 
-.loading-spinner-whole{
+.loading-spinner{
     width: 100%;
-    height: 170vh;
+    height: 100vh;
     background-color: $color-tertiary;
     position:absolute;
     top:0;
-    animation: spinner-complete $spinner-complete-dur $loading-spinner-dur forwards;    
-}
-.loading-spinner-inner{
-    width: 100%;
-    height: 100vh;    
     $arg: cl-cnt-cnt-nw;
     @include flxbox($flex-map, $arg);
     &__intro{
@@ -56,5 +48,6 @@
         border-top-color: $color-primary;
         border-bottom-color: $color-secondary;        
         animation: spinner $loading-spinner-cycle-dur $loading-spinner-delay ease-in-out $loading-spinner-iter;        
-    }        
+    }
+    animation: spinner-complete $spinner-complete-dur $loading-spinner-dur forwards;        
 }
