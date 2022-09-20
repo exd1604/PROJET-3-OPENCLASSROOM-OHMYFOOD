@@ -4,7 +4,7 @@
 // visibility is used, then wrapper occupies the height of its contents and is too high 
 // compare to spinner. 
 // 2: Wrapper appears progressively untill it fills entire space.
-@keyframes woff{
+@keyframes wrapper-off{
     0% {
         display: none;                       
    }    
@@ -29,7 +29,7 @@
     min-width: $min-width;
 
 // Step 1 : wrapper goes off and its space is free'd. Last the time the spinne is running.
-    animation-name: woff $loading-spinner-dur 0ms both;
+    animation: wrapper-off $loading-spinner-dur 0ms both;
 
 // Step 2 : Once complete wrapper appears. Delay equals the spinner duration
     animation: wrapper $wrapper-dur calc($loading-spinner-dur + $spinner-complete-dur) linear both;    
