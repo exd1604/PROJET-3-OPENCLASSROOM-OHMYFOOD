@@ -43,6 +43,7 @@
       &--#{$mod} {
         $mnu-card-img-val: map-get($map, $mod);
         background-image: map-get($mnu-card-img-val, bgi);
+        background-position: map-get($mnu-card-img-val, pos);        
         @media screen and (min-width: map-get($breakpoints, tablet)){            
             background-position: 50%;
         }

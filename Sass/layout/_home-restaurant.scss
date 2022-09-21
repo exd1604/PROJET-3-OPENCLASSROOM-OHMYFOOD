@@ -2,8 +2,8 @@
 .restaurant{
     $arg: cl-fs-dft-nw;
     @include flxbox($flex-map, $arg);
-    background-color: rgba($color-black , nth($blck-opct, 2));
-    padding: 60px 20px;  
+    background-color: rgba($color-black , nth($blck-opct, 1));
+    padding: 65px 20px;  
     width:100%;   
     &__title{
         width: 98%;

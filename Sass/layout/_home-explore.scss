@@ -3,23 +3,25 @@
     $arg: cl-cnt-cnt-nw;
     @include flxbox($flex-map, $arg);    
 //
-    background-color: rgba($color-black , nth($blck-opct, 2));
+    background-color: rgba($color-black , nth($blck-opct, 1));
     &__loc{
         width: 100%;
         $arg: rw-cnt-cnt-nw;
         @include flxbox($flex-map, $arg);
-        background-color: rgba($color-black , nth($blck-opct, 3));
+        background-color: rgba($color-black , nth($blck-opct, 2));
         color:$color-black;  
-        height: 50px;
+        height: 60px;
         & i{
-            width: 25px; 
+            width: 40px; 
         }
         & span{
-            text-align: center;                
+            font-size: 1.25em;
+            font-weight: 600;
+            text-align: center;                            
         }
     }
     &__title{
-        margin: 20px 0;
+        margin: 50px 0 20px 0;
         & p{
             font-size: 2em;
             font-weight: 700;
@@ -27,10 +29,11 @@
         }
     }
     &__txt{
-        opacity: 0.5; 
-        margin-bottom: 20px;
+        opacity: 0.6; 
+        margin-bottom: 40px;
         & p{
-            text-align:center;                
+            text-align:center;
+            font-size: 1.25em;                
         }           
     }
 @import "../components/home-explore-btn.scss";

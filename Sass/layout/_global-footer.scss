@@ -2,7 +2,7 @@
 .footer{
     width: 100%;
     text-align: center;
-    background-color: rgba($color-black , nth($blck-opct, 6));    
+    background-color: rgba($color-black , nth($blck-opct, 7));    
     @media screen and (max-width: map-get($breakpoints, mobile)){
         padding-left: 1.25em;
         text-align: left;            
@@ -10,14 +10,18 @@
     & h2{
         color: $color-white; 
         font-weight: 400;
-        padding: 25px 0;                                     
+        padding: 30px 0;         
+        @media screen and (min-width: map-get($breakpoints, tablet)){ 
+            padding-bottom: 40px;                            
+        }
     }
     &__list{         
         list-style: none;
         padding: 0 0 30px 0;
         @media screen and (min-width: map-get($breakpoints, tablet)){ 
             $arg: rw-se-cnt-nw;
-            @include flxbox($flex-map, $arg);                                            
+            @include flxbox($flex-map, $arg); 
+            padding-bottom: 40px;                                            
         }
         & li{
             padding-bottom: 10px;

@@ -1,14 +1,14 @@
 // Button on the home main page in the top "explore" section of the page
 &__btn{
-    background-image: linear-gradient(rgba($color-secondary, 1), rgba($color-primary, 1));
+    background-image: linear-gradient(to right, rgba($color-secondary, 1), rgba($color-primary, 1));
     color: $color-white; 
-    font-size: large;
-    padding: 20px;
+    font-size: larger;
+    padding: 22px 30px;
     border:none;
     border-radius: 35px;
-    margin-bottom: 50px; 
+    margin-bottom: 60px; 
     &:hover{
         cursor:pointer;
-        background-image: linear-gradient(rgba($color-secondary,0.7), rgba($color-primary, 0.7));        
+        background-image: linear-gradient(to right, rgba($color-secondary,0.75), rgba($color-primary, 0.75));        
     }         
 }
