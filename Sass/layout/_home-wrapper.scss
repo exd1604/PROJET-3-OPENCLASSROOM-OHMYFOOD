@@ -1,18 +1,6 @@
 // Home wrapper. 
-// Wrapper animation in 2 steps
-// 1: It goes off to "free" space so spinner is displayed on whole page. (If only opacity or
-// visibility is used, then wrapper occupies the height of its contents and is too high 
-// compare to spinner. 
-// 2: Wrapper appears progressively untill it fills entire space.
-@keyframes wrapper-off{
-    0% {
-        display: none;                       
-   }    
-    100% {
-        display: none;        
-    }
-}
-
+// Waits while spinner is running. Once spinner completed, then home page is scaled up
+// to 100%.  
 @keyframes wrapper{
     0% {
         transform: scale(0);
@@ -27,10 +15,6 @@
     top:0;
     width: 100%;
     min-width: $min-width;
-
-// Step 1 : wrapper goes off and its space is free'd. Last the time the spinne is running.
-    animation: wrapper-off $loading-spinner-dur 0ms both;
-
-// Step 2 : Once complete wrapper appears. Delay equals the spinner duration
+// Wrapper is delayed while spinner running (Check variables partial in /utils)
     animation: wrapper $wrapper-dur calc($loading-spinner-dur + $spinner-complete-dur) linear both;    
 } 
